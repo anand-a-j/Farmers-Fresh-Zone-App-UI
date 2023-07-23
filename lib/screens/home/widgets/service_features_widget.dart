@@ -18,10 +18,11 @@ class ServiceFeaturesWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(5)),
       child:const Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          FeaturesItems(name: "30 MINS POLICY", icon: Icons.lock_clock),
+          FeaturesItems(name: "30 MINS POLICY", icon: Icons.timer),
           FeaturesItems(name: "TRACEABILITY", icon: Icons.map),
-          FeaturesItems(name: "LOCAL SOURCING", icon: Icons.location_city),
+          FeaturesItems(name: "LOCAL SOURCING", icon: Icons.agriculture),
         ],
       ),
     );

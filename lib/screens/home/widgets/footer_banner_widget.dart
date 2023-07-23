@@ -7,16 +7,18 @@ class FoooterBannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(0),
-      padding: EdgeInsets.only(top: 10, bottom: 5),
+      margin: const EdgeInsets.all(0),
+      padding: const EdgeInsets.only(top: 10, bottom: 5),
       width: double.infinity,
-      height: 30,
+      height: 60,
       color: kGreenColor,
-      child: Center(
-          child: Text(
-        "Coded by Anand",
-        style: TextStyle(color: kWhiteColor),
-      )),
+      child: const Center(
+        child: Text(
+          "Copyright @ 2021 Farmers Fresh Zone.\nAll Rights Reserved.",
+          style: TextStyle(color: kWhiteColor, fontSize: 12),
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }

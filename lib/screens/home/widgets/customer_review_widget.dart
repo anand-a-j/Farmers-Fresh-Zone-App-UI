@@ -1,7 +1,7 @@
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:farmers_fresh_zone_ui/constants/colors.dart';
 import 'package:farmers_fresh_zone_ui/constants/constants.dart';
+import 'package:farmers_fresh_zone_ui/data/dummy_data.dart';
 import 'package:flutter/material.dart';
 
 class CustomerReviewWidget extends StatelessWidget {
@@ -20,27 +20,48 @@ class CustomerReviewWidget extends StatelessWidget {
               autoPlayAnimationDuration: const Duration(milliseconds: 900),
               aspectRatio: 16 / 9,
               viewportFraction: 1),
-          items: [
-            ReviewCard(),
-          ],
+          items: List.generate(
+            review.length,
+            (index) => ReviewCard(
+              name: review[index]['name'],
+              profession: review[index]['profession'],
+              review: review[index]['review'],
+            ),
+          ),
         ),
         const SizedBox(
           height: 15,
         ),
-        Divider(),
+        const Divider(),
         const SizedBox(
           height: 15,
         ),
-        Center(
-          child: Text(
-              "This Kochi-based-farm-to-fork online\nMarketplace is connecting farmers directly\nto customers"),
-        ),
+        const TagTitleWidget(),
         const SizedBox(
           height: 15,
         ),
-        MediaCard(),
+        const MediaCard(),
         divider,
       ],
+    );
+  }
+}
+
+class TagTitleWidget extends StatelessWidget {
+  const TagTitleWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text(
+        '''This Kochi-based-farm-to-fork online
+Marketplace is connecting farmers directly
+  to customers''',
+        style: TextStyle(height: 1.5, fontSize: 12),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
@@ -57,48 +78,37 @@ class MediaCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.network(
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgXdoJwqDQG9ofYcTcBhdC02ItIYa6sTufBg&usqp=CAU",
+        children: List.generate(
+          mediaLogo.length,
+          (index) => Image.network(
+            mediaLogo[index],
             fit: BoxFit.contain,
-            width: 90,
+            width: 70,
             height: 40,
           ),
-          Image.network(
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy85Ra5oHFZdhu_4diJPhQvDmmNouu5fuT0w&usqp=CAU",
-            fit: BoxFit.contain,
-            width: 90,
-            height: 40,
-          ),
-          Image.network(
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrHs0SfMAjW592dHPSdnPMTq-lKfxCVjZPXw&usqp=CAU",
-            fit: BoxFit.contain,
-            width: 90,
-            height: 40,
-          ),
-          Image.network(
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvAQvPv-ihoC3j78ecP_CD_ZeDImFSPnmUs_-_HELnvQCh3GtAgIRnqHZWIuPcsa_NUA&usqp=CAU",
-            fit: BoxFit.contain,
-            width: 90,
-            height: 40,
-          ),
-        ],
+        ),
       ),
     );
   }
 }
 
 class ReviewCard extends StatelessWidget {
-  const ReviewCard({
-    super.key,
-  });
+  final String name;
+  final String profession;
+  final String review;
+  const ReviewCard(
+      {super.key,
+      required this.name,
+      required this.profession,
+      required this.review});
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.height;
     return Container(
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.symmetric(vertical: 0, horizontal: 15),
-      height: 300,
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+      height: size * 0.6,
       width: double.infinity,
       decoration: BoxDecoration(
         border: Border.all(width: 0.2, color: kGreyColor),
@@ -109,18 +119,21 @@ class ReviewCard extends StatelessWidget {
         children: [
           ListTile(
             contentPadding: EdgeInsets.zero,
-            leading: CircleAvatar(),
-            title: Text("Rinish K N"),
-            subtitle: Text("CTO, Rapid Value"),
-            trailing: Icon(Icons.format_quote),
+            leading: const CircleAvatar(
+              backgroundImage: NetworkImage(
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpWIUTEbl3Km2gu10Jsib39To4S4IYsn8QhA&usqp=CAU"),
+            ),
+            title: Text(name),
+            subtitle: Text(profession),
+            trailing: const Icon(Icons.format_quote),
           ),
           SizedBox(
             width: double.infinity,
-            height: 190,
+            height: size * 0.16,
             child: Text(
-              " sservice provided by farmers fresh zone.I was exetemely happy for the  sservice provided by farmers fresh zone.I was exetemely happy for the  sservice provided by farmers fresh zone.",
+              review,
               softWrap: true,
-              style: TextStyle(height: 1.5),
+              style: const TextStyle(height: 1.5, fontWeight: FontWeight.bold,color: kGreyColor,fontSize: 14),
             ),
           ),
         ],

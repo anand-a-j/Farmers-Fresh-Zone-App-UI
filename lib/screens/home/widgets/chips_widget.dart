@@ -41,10 +41,10 @@ class ChipWidget extends StatelessWidget {
           fontWeight: FontWeight.bold,
           fontSize: 12,
         ),
-      backgroundColor:const Color(0xffbff3ce),
+      backgroundColor:const Color(0xfff1fcf3),
       side: const BorderSide(
         color: kGreenColor,
-        width: 0.2,
+        width: 0.1,
       ),
     );
   }

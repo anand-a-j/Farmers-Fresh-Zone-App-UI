@@ -1,7 +1,6 @@
-
 import 'package:farmers_fresh_zone_ui/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
-//import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Farmers Fresh Zone App UI',
       theme: ThemeData(
-           //fontFamily: GoogleFonts.roboto().fontFamily,
-          ),
+        fontFamily: GoogleFonts.workSans().fontFamily,
+      ),
       home: HomeScreen(),
     );
   }

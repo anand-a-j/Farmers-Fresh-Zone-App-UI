@@ -9,31 +9,49 @@ class ProductGridWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      itemCount: products.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          // mainAxisSpacing: 5,
-          // crossAxisSpacing: 5,
-          childAspectRatio: 0.8 / 1),
-      itemBuilder: (context, index) => ProductCard(index: index),
+    return Column(
+      children: [
+        GridView.builder(
+          shrinkWrap: true,
+          itemCount: products.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              // mainAxisSpacing: 5,
+              // crossAxisSpacing: 5,
+              childAspectRatio: 0.8 / 1.1),
+          itemBuilder: (context, index) => ProductCard(index: index),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: MaterialButton(
+            onPressed: () {},
+            minWidth: double.infinity,
+            height: 30,
+            color: kGreenColor,
+            textColor: kWhiteColor,
+            shape: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5),
+                borderSide: const BorderSide(color: kGreenColor)),
+            child: const Text(
+              "VIEW MORE",
+              style: TextStyle(fontWeight: FontWeight.w800),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
 
 class ProductCard extends StatelessWidget {
   final int index;
-  const ProductCard({
-    super.key,
-    required this.index
-  });
+  const ProductCard({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         border: Border.all(width: 0.2, color: kGreyColor),
         borderRadius: BorderRadius.circular(5),
@@ -42,39 +60,57 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.all(10),
-            height: 150,
+            padding: const EdgeInsets.all(10),
+            height: 100,
             decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
                 image: NetworkImage(
                   "${products[index]['imageUrl']}",
                 ),
               ),
             ),
           ),
-          const SizedBox(height: 15),
-          Text(products[index]['productTitle']),
-          const SizedBox(height: 15),
+          const SizedBox(height: 10),
+          Text(
+            products[index]['productTitle'],
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
           products[index]['discount'] == true
               ? Row(
                   children: [
-                    Text("₹${products[index]['price']}"),
-                    Text(" ₹${products[index]['discountPrice']}")
+                    Text("₹${products[index]['price']}",
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(width: 3),
+                    Text(
+                      "₹${products[index]['discountPrice']}",
+                      style: const TextStyle(
+                          decoration: TextDecoration.lineThrough,
+                          color: kGreyColor),
+                    )
                   ],
                 )
-              : Text("₹${products[index]['price']}"),
+              : Text("₹${products[index]['price']}",
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: 10),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text("1.00 ${products[index]['unit']}"),
-              Spacer(),
-              ElevatedButton(onPressed: () {}, child:const Text("ADD"))
+              Text("1.00 ${products[index]['unit']}",
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
+              const Spacer(),
+              MaterialButton(
+                onPressed: () {},
+                minWidth: 90,
+                height: 35,
+                color: kGreenColor,
+                textColor: kWhiteColor,
+                child: const Text("ADD"),
+              )
             ],
           ),
-          const SizedBox(
-            height: 15,
-          )
+          const Spacer()
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:farmers_fresh_zone_ui/constants/colors.dart';
 import 'package:farmers_fresh_zone_ui/constants/constants.dart';
+import 'package:farmers_fresh_zone_ui/data/dummy_data.dart';
 import 'package:farmers_fresh_zone_ui/screens/home/widgets/main_title_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -13,19 +14,26 @@ class BlogTileWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        MainTitleWidget(title: "Our Blog Posts"),
+        const MainTitleWidget(title: "Our Blog Posts"),
         Container(
-          padding: EdgeInsets.all(10),
-          height: 240,
+          padding: const EdgeInsets.all(10),
+          height: 250,
           width: double.infinity,
           child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: 3,
-            itemBuilder: (context, index) => BlogCard(),
-          ),
+              scrollDirection: Axis.horizontal,
+              itemCount: blogs.length,
+              itemBuilder: (context, index) => BlogCard(
+                  title: blogs[index]['title'],
+                  imageUrl: blogs[index]['image'])),
         ),
-        Center(
-          child: Text("VIEW MORE"),
+        const Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Center(
+            child: Text(
+              "VIEW MORE",
+              style: TextStyle(color: kGreenColor, fontWeight: FontWeight.bold),
+            ),
+          ),
         ),
         divider
       ],
@@ -34,14 +42,14 @@ class BlogTileWidget extends StatelessWidget {
 }
 
 class BlogCard extends StatelessWidget {
-  const BlogCard({
-    super.key,
-  });
+  final String imageUrl;
+  final String title;
+  const BlogCard({super.key, required this.title, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(5),
+      margin: const EdgeInsets.all(5),
       width: 160,
       height: 200,
       decoration: BoxDecoration(
@@ -56,23 +64,36 @@ class BlogCard extends StatelessWidget {
             Container(
               height: 100,
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image:
-                          NetworkImage("https://picsum.photos/200"))),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(imageUrl),
+                ),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            Text("Control Blood\nPresure, the rl"),
-            SizedBox(
+            Text(
+              title,
+              style:const TextStyle(color: kGreyColor, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
               height: 15,
             ),
-            Row(
+            const Row(
               children: [
-                Text("a year ago"),
+                Text(
+                  "a year ago",
+                  style: TextStyle(fontSize: 10, color: kGreyColor),
+                ),
                 Spacer(),
-                Icon(Icons.rotate_right)
+                Icon(Icons.arrow_forward,
+                    color: kGreenColor,
+                    opticalSize: 20,
+                    size: 12,
+                    weight: 100,
+                    grade: -25,
+                    fill: 0),
               ],
             ),
           ],

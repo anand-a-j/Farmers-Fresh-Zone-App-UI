@@ -9,10 +9,10 @@ class FooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       child: SizedBox(
-        height: 300,
+        height: 190,
         width: double.infinity,
         child: FooterTextCard(),
       ),
@@ -27,20 +27,35 @@ class FooterTextCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Get TO Know Us"),
+        Text(
+          "Get TO Know Us",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         SizedBox(
           height: 15,
         ),
-        Text("About Us  |  Our Farmers  |  Blog"),
+        Text(
+          "About Us  |  Our Farmers  |  Blog",
+          style: TextStyle(color: kGreyColor, fontSize: 12),
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Text("Useful Links", style: TextStyle(fontWeight: FontWeight.bold)),
+        SizedBox(
+          height: 15,
+        ),
+        Text("Privacy Policy  |  Return & Refund Policy  |  Terms & Conditions",
+            style: TextStyle(color: kGreyColor, fontSize: 12)),
         SizedBox(
           height: 15,
         ),
         Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 60),
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 60),
             child: SizedBox(
               height: 50,
               child: Row(

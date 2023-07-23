@@ -1,4 +1,3 @@
-
 import 'package:farmers_fresh_zone_ui/constants/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -13,15 +12,17 @@ class BannerWidget extends StatelessWidget {
       children: [
         divider,
         Card(
-          margin: EdgeInsetsDirectional.symmetric(horizontal: 0, vertical: 2),
+          margin: const EdgeInsetsDirectional.symmetric(horizontal: 0, vertical: 2),
           child: Container(
             width: double.maxFinite,
             height: 150,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                        "https://t3.ftcdn.net/jpg/01/63/13/30/360_F_163133061_TlMOMqgxAvBuwzLAjxOQ8v1FQ3OexfRG.jpg"))),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                    "https://t3.ftcdn.net/jpg/01/63/13/30/360_F_163133061_TlMOMqgxAvBuwzLAjxOQ8v1FQ3OexfRG.jpg"),
+              ),
+            ),
           ),
         ),
         divider

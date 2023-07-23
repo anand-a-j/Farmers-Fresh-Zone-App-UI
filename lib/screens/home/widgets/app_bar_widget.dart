@@ -46,7 +46,7 @@ class AppBarWidget extends StatelessWidget {
         elevation: 0,
         title: SizedBox(
           width: double.infinity,
-          height: 35,
+          height: 30,
           child: TextField(
             decoration: InputDecoration(
               contentPadding:
@@ -66,6 +66,10 @@ class AppBarWidget extends StatelessWidget {
               hintText: "Search for Vegetables, Fruits ..",
               hintStyle: const TextStyle(color: kGreyColor, fontSize: 14),
               border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6),
+                borderSide: const BorderSide(color: kWhiteColor),
+              ),
+              enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(6),
                 borderSide: const BorderSide(color: kWhiteColor),
               ),
