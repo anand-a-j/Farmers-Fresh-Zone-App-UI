@@ -1,6 +1,5 @@
 import 'package:farmers_fresh_zone_ui/data/dummy_data.dart';
 import 'package:flutter/material.dart';
-import 'main_title_widget.dart';
 
 class CategoryGridWidget extends StatelessWidget {
   const CategoryGridWidget({
