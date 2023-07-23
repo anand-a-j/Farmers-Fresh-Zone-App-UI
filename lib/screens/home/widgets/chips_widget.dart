@@ -9,8 +9,6 @@ class ChipContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return SliverToBoxAdapter(
-      // child: 
     return  Container(
       margin: EdgeInsets.zero,
         width: double.infinity,
@@ -45,7 +43,7 @@ class ChipWidget extends StatelessWidget {
       backgroundColor:const Color(0xfff1fcf3),
       side: const BorderSide(
         color: kGreenColor,
-        width: 0.1,
+        width: 0.2,
       ),
     );
   }

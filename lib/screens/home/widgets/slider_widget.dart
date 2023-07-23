@@ -10,8 +10,8 @@ class SliderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     List sliderImage = [
       "https://res.cloudinary.com/farmersfreshzone/image/upload/v1689829708/banner/cwsi2grxcaz1xchgtn2g.jpg",
-      "https://t4.ftcdn.net/jpg/03/98/10/13/240_F_398101340_3mRh3d357CuNBUbWX2lMa41TYRKlcMoW.jpg",
-      "https://t4.ftcdn.net/jpg/02/67/81/97/240_F_267819786_pNyRygWHxA5FeR2hypgoj3HUyLDH1zPh.jpg",
+      "https://t3.ftcdn.net/jpg/02/72/61/04/240_F_272610481_sG8NpOrkR9RcqwtkgOk1LxZDcT3GCzru.jpg",
+      "https://t4.ftcdn.net/jpg/02/61/88/57/240_F_261885799_wChAE2Eseb3sGtTNcz1nvi0V51p6mcMZ.jpg",
     ];
     return CarouselSlider(
       items:  List.generate(sliderImage.length, (index) => SliderItemCard(imageUrl: sliderImage[index])), 
@@ -19,9 +19,11 @@ class SliderWidget extends StatelessWidget {
           autoPlay: true,
           autoPlayInterval: const Duration(seconds: 4),
           autoPlayAnimationDuration: const Duration(milliseconds: 1200),
-          aspectRatio: 16 / 9,
+          //aspectRatio: 16 / 9,
+          aspectRatio: 64/10,
           height: 200,
-          viewportFraction: 1),
+          viewportFraction: 1
+      ),
     );
   }
 }

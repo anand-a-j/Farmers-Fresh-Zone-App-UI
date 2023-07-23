@@ -37,7 +37,7 @@ List<Map<String, dynamic>> products = [
     "discountPrice": 60,
     "unit": "NOS",
     "imageUrl":
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThnNVWdbMZqe-8Nf0lQrGD1ohRjS_oVoDMsA&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCnI6B0oJxMCNBOD8U0Ctw08SjFJzN2b1x-Q&usqp=CAU",
   },
   {
     "productTitle": "Avial Cut Family Pack 500g",
@@ -64,7 +64,7 @@ List<Map<String, dynamic>> products = [
     "discountPrice": 0,
     "unit": "NOS",
     "imageUrl":
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAjCyU052QkTDruEdellrdd4oBdUgbkbqF_A&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBidM2QZIPbKF2oyZ1lhvGX-nvl5qjRFL1eQ&usqp=CAU",
   },
   {
     "productTitle": "Broccoli Florets 200g\n",

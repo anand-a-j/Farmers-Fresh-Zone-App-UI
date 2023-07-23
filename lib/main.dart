@@ -13,10 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Farmers Fresh Zone App UI',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: GoogleFonts.workSans().fontFamily,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

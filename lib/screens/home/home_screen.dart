@@ -37,14 +37,16 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteColor,
-      body: CustomScrollView(
-        slivers: [
-          const AppBarWidget(),
-          SliverList.builder(
-            itemCount: _widgets.length,
-            itemBuilder: (context,index) => _widgets[index]
-            ),
-        ],
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            const AppBarWidget(),
+            SliverList.builder(
+              itemCount: _widgets.length,
+              itemBuilder: (context,index) => _widgets[index]
+              ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavWidget(),
     );
