@@ -1,4 +1,4 @@
-import 'package:farmers_fresh_zone_ui/constants/colors.dart';
+import 'package:farmers_fresh_zone_ui/utils/colors.dart';
 import 'package:farmers_fresh_zone_ui/screens/home/widgets/app_bar_widget.dart';
 import 'package:farmers_fresh_zone_ui/screens/home/widgets/banner_widget.dart';
 import 'package:farmers_fresh_zone_ui/screens/home/widgets/blog_tile_widget.dart';
@@ -42,9 +42,10 @@ class HomeScreen extends StatelessWidget {
           SliverList.builder(
             itemCount: _widgets.length,
             itemBuilder: (context,index) => _widgets[index]
-            )
+            ),
         ],
       ),
+      
     );
   }
 }

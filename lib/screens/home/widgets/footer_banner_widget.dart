@@ -1,4 +1,4 @@
-import 'package:farmers_fresh_zone_ui/constants/colors.dart';
+import 'package:farmers_fresh_zone_ui/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class FoooterBannerWidget extends StatelessWidget {

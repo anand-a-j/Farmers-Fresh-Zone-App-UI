@@ -1,4 +1,4 @@
-import 'package:farmers_fresh_zone_ui/constants/constants.dart';
+import 'package:farmers_fresh_zone_ui/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class BannerWidget extends StatelessWidget {
