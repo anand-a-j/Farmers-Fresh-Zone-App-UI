@@ -12,6 +12,7 @@ class ProductGridWidget extends StatelessWidget {
     return Column(
       children: [
       GridView.builder(
+        padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: products.length,
@@ -96,7 +97,8 @@ class ProductCard extends StatelessWidget {
                   style: const TextStyle(fontWeight: FontWeight.bold)),
           const SizedBox(height: 10),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("1.00 ${products[index]['unit']}",
                   style: const TextStyle(fontWeight: FontWeight.bold)),

@@ -31,7 +31,7 @@ List<Map<String, dynamic>> products = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4yRTSUnGAHQvZ0-Hd5gcadyRcK1iCVSFS4A&usqp=CAU",
   },
   {
-    "productTitle": "Carrot (450-550gm)",
+    "productTitle": "Carrot (450-550gm)\n",
     "price": 43,
     "discount": true,
     "discountPrice": 60,
@@ -49,7 +49,7 @@ List<Map<String, dynamic>> products = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNn81Hv6Q-rthZdF2WkNPnYY1QMw81_Zgrmg&usqp=CAU",
   },
   {
-    "productTitle": "Tomato (450gm-550gm)",
+    "productTitle": "Tomato (450gm-550gm)\n",
     "price": 78,
     "discount": true,
     "discountPrice": 85,
@@ -67,7 +67,7 @@ List<Map<String, dynamic>> products = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAjCyU052QkTDruEdellrdd4oBdUgbkbqF_A&usqp=CAU",
   },
   {
-    "productTitle": "Broccoli Florets 200g",
+    "productTitle": "Broccoli Florets 200g\n",
     "price": 118,
     "discount": true,
     "discountPrice": 180,
@@ -85,7 +85,7 @@ List<Map<String, dynamic>> products = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlyK1CPn_GUoSQhl7tDqMtJIS3v_FRX8u1tg&usqp=CAU",
   },
   {
-    "productTitle": "Ladies Finger",
+    "productTitle": "Ladies Finger\n",
     "price": 14.1,
     "discount": true,
     "discountPrice": 31,
@@ -103,7 +103,7 @@ List<Map<String, dynamic>> products = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgzMi48S4zgfKCWPzaEfmCkH_UtYJ-zL7XRA&usqp=CAU",
   },
   {
-    "productTitle": "Kiwi (3 Nos)",
+    "productTitle": "Kiwi (3 Nos)\n",
     "price": 148,
     "discount": true,
     "discountPrice": 227,
