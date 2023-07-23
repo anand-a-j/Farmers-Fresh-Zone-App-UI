@@ -12,6 +12,7 @@ class CategoryGridWidget extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: SizedBox(
         child: GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: categorys.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

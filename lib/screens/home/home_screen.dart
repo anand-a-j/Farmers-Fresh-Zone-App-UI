@@ -14,7 +14,7 @@ import 'package:farmers_fresh_zone_ui/screens/home/widgets/slider_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+ const HomeScreen({super.key});
 
   final List _widgets = const [
     ChipContainerWidget(),
@@ -39,13 +39,10 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           const AppBarWidget(),
-          SliverToBoxAdapter(
-              child: ListView.builder(
-            shrinkWrap: true,
+          SliverList.builder(
             itemCount: _widgets.length,
-            itemBuilder: (context, index) => _widgets[index],
-          ),
-          ),
+            itemBuilder: (context,index) => _widgets[index]
+            )
         ],
       ),
     );

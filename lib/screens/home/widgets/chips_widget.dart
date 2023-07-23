@@ -12,6 +12,7 @@ class ChipContainerWidget extends StatelessWidget {
     // return SliverToBoxAdapter(
       // child: 
     return  Container(
+      margin: EdgeInsets.zero,
         width: double.infinity,
         height: 50,
         color: kWhiteColor,
