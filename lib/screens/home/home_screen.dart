@@ -1,3 +1,4 @@
+import 'package:farmers_fresh_zone_ui/screens/home/widgets/bottom_nav_widget.dart';
 import 'package:farmers_fresh_zone_ui/utils/colors.dart';
 import 'package:farmers_fresh_zone_ui/screens/home/widgets/app_bar_widget.dart';
 import 'package:farmers_fresh_zone_ui/screens/home/widgets/banner_widget.dart';
@@ -45,7 +46,7 @@ class HomeScreen extends StatelessWidget {
             ),
         ],
       ),
-      
+      bottomNavigationBar: BottomNavWidget(),
     );
   }
 }
