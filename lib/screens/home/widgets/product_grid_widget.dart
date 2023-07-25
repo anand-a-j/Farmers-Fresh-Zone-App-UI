@@ -9,18 +9,23 @@ class ProductGridWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final widthSize = MediaQuery.of(context).size.width;
+    final heightSize = MediaQuery.of(context).size.height;
     return Column(
       children: [
-      GridView.builder(
-        padding: EdgeInsets.zero,
-        physics: const NeverScrollableScrollPhysics(),
+        GridView.builder(
+          padding: EdgeInsets.zero,
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: products.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               // mainAxisSpacing: 5,
               // crossAxisSpacing: 5,
-              childAspectRatio: 0.8 / 1.1),
+              // childAspectRatio: 0.8 / 1.1
+              childAspectRatio: widthSize < 410
+                  ? widthSize / heightSize / 0.7
+                  : widthSize / heightSize / 0.65),
           itemBuilder: (context, index) => ProductCard(index: index),
         ),
         Padding(
@@ -32,8 +37,9 @@ class ProductGridWidget extends StatelessWidget {
             color: kGreenColor,
             textColor: kWhiteColor,
             shape: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5),
-                borderSide: const BorderSide(color: kGreenColor)),
+              borderRadius: BorderRadius.circular(5),
+              borderSide: const BorderSide(color: kGreenColor),
+            ),
             child: const Text(
               "VIEW MORE",
               style: TextStyle(fontWeight: FontWeight.w800),
@@ -73,7 +79,7 @@ class ProductCard extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           Text(
             products[index]['productTitle'],
             style: const TextStyle(fontWeight: FontWeight.bold),
@@ -113,7 +119,6 @@ class ProductCard extends StatelessWidget {
               )
             ],
           ),
-          const Spacer()
         ],
       ),
     );

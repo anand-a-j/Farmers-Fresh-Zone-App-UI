@@ -8,6 +8,8 @@ class CategoryGridWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     final widthSize = MediaQuery.of(context).size.width;
+    final heightSize = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
       child: SizedBox(
@@ -16,11 +18,12 @@ class CategoryGridWidget extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: categorys.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              childAspectRatio: 2.49 / 2.7,
               mainAxisSpacing: 5,
-              crossAxisSpacing: 5
+              crossAxisSpacing: 5,
+             // childAspectRatio: 2.49 / 2.7,
+             childAspectRatio: widthSize/heightSize/1/0.5
               ),
           itemBuilder: (context, index) => CategoryItemCard(
               itemName: categorys[index], imageUrl: categoryImageUrl[index]),
@@ -52,11 +55,11 @@ class CategoryItemCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            height: 86,
+            height: 90,
             width: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 image: NetworkImage(imageUrl),
               ),
               borderRadius: const BorderRadius.only(
